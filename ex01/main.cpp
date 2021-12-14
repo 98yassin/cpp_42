@@ -122,6 +122,7 @@ void	contact::print_columns()
 
 void	contact::search(contact *contact, int i)
 {
+	std::string str;
 	int index;
 	int j;
 
@@ -138,15 +139,21 @@ void	contact::search(contact *contact, int i)
 	{
 		std::cout << "if you terminate searching enter -1" << std::endl;
 		std::cout << "enter an index: " << std::endl;
-		std::cin >> index;
-		if (std::cin.eof())
-			break;
-		if (index != -2)
-		{ 
-			if (index >= 0 && index < i)
-				contact[index].display_contact_info();
-			else
-				std::cout << "no contact find!!" << std::endl;
+		std::getline(std::cin, str);
+		if (str.length() > 1 || !isdigit(str[0]))
+			std::cout << "error\n";
+		else
+		{
+			index = std::atoi(str.c_str());
+			if (std::cin.eof())
+				break;
+			if (index != -2)
+			{ 
+				if (index >= 0 && index < i)
+					contact[index].display_contact_info();
+				else
+					std::cout << "no contact find!!" << std::endl;
+			}
 		}
 	}
 }
