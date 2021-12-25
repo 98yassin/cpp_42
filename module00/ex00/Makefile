@@ -2,13 +2,16 @@ NAME = megaphone
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = megaphone.cpp
-
 all: $(NAME)
 
-$(NAME) :
-	clang++ $(FLAGS) $(SRC) -o $@
+$(NAME) : megaphone.o
+	clang++ $(FLAGS) $^ -o $@
 
-fclean:
+megaphone.o:megaphone.cpp
+	clang++ $(FLAGS) -c $^ -o $@
+
+clean:
+	rm -f megaphone.o
+fclean: clean
 	rm -f $(NAME)
 re: fclean $(NAME)

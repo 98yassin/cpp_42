@@ -2,13 +2,16 @@ NAME = brain
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = main.cpp
-
 all: $(NAME)
 
-$(NAME):
-	clang++ $(FLAGS) $(SRC) -o $@
+$(NAME): main.o
+	clang++ $(FLAGS) $^ -o $@
 
-fclean:
+main.o : main.cpp
+	clang++ $(FLAGS) -c $^ -o $@
+
+clean:
+	rm -f main.o
+fclean: clean
 	rm -f $(NAME)
 re: fclean $(NAME)

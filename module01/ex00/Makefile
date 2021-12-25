@@ -13,6 +13,7 @@ $(NAME) : $(OBJ)
 	clang++ $(FLAGS) $^ -o $@
 %.o:%.cpp $(INC)
 	clang++ $(FLAGS) -c $<
+
 clean:
 	rm -f $(OBJ)
 fclean: clean
