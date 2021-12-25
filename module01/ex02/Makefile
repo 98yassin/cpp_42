@@ -1,12 +1,12 @@
-NAME = megaphone
+NAME = brain
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = megaphone.cpp
+SRC = main.cpp
 
 all: $(NAME)
 
-$(NAME) :
+$(NAME):
 	clang++ $(FLAGS) $(SRC) -o $@
 
 fclean:
