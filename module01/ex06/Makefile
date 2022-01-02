@@ -1,17 +1,17 @@
-NAME = weapon
+NAME = karen
 
 CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror
 
-INC = weapon.hpp humanA.hpp humanB.hpp
-OBJ = weapon.o humanA.o humanB.o main.o
+INC = karen.hpp
+OBJ = karen.o main.o
 
 all: $(NAME)
 
-$(NAME):$(OBJ)
+$(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ):$(INC)
+$(OBJ): $(INC)
 
 clean:
 	rm -f $(OBJ)
