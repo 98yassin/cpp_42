@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/31 15:33:23 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/02 16:19:28 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/03 15:38:14 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/03 18:07:54 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_H
-# define KAREN_H
+#include "Fixed.hpp"
 
-# include <iostream>
-# include <string>
-
-class karen
+int main()
 {
-private:
-    void    debug(void);
-    void    info(void);
-    void    warning(void);
-    void    error(void);
-public:
-    karen();
-    ~karen();
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
 
-    void    complain(std::string level);
-};
+    c = b;
+    
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
 
-typedef void (karen::*ptr_to_karen_func) (void);
-
-#endif
+    return 0;
+}

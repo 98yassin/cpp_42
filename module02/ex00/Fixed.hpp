@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   karen.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/31 15:33:23 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/02 16:19:28 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/03 15:38:42 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/04 14:54:29 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_H
-# define KAREN_H
+#ifndef FIXED_H
+# define FIXED_H
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
 
-class karen
+class Fixed
 {
 private:
-    void    debug(void);
-    void    info(void);
-    void    warning(void);
-    void    error(void);
+    int _pf_num;
+    static const int _b_num;
 public:
-    karen();
-    ~karen();
+    Fixed();
+    ~Fixed();
+    
+    Fixed & operator = (Fixed const & f2);
+    Fixed(Fixed const & f1);
 
-    void    complain(std::string level);
+    int getRawBits( void ) const;
+    void setRawBits( int const raw );
 };
-
-typedef void (karen::*ptr_to_karen_func) (void);
 
 #endif
