@@ -5,7 +5,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME) : megaphone.o
-	clang++ $(FLAGS) $^ -o $@
+	clang++ $(FLAGS) $< -o $@
 
 megaphone.o:megaphone.cpp
 	clang++ $(FLAGS) -c $^ -o $@

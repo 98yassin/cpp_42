@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/04 15:26:08 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/07 02:30:23 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/06 19:42:53 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/07 03:58:21 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,100 @@ std::ostream & operator <<(std::ostream & os, Fixed const & obj)
     return (os);
 }
 
+bool    Fixed::operator > (Fixed const & a)
+{
+    return (_pf_num > a._pf_num);
+}
+bool    Fixed::operator < (Fixed const & a)
+{
+    return (_pf_num < a._pf_num);
+}
+
+bool    Fixed::operator >= (Fixed const & a)
+{
+    return (_pf_num >= a._pf_num);
+}
+
+bool    Fixed::operator <= (Fixed const & a)
+{
+    return (_pf_num <= a._pf_num);
+}
+
+bool    Fixed::operator == (Fixed const & a)
+{
+    return (_pf_num == a._pf_num);
+}
+
+bool    Fixed::operator != (Fixed const & a)
+{
+    return (_pf_num != a._pf_num);
+}
+
+Fixed &  Fixed::operator + (Fixed const & a)
+{
+    _pf_num += a._pf_num;
+    return (*this);
+}
+
+Fixed &  Fixed::operator - (Fixed const & a)
+{
+    _pf_num -= a._pf_num;
+    return (*this);
+}
+
+Fixed &  Fixed::operator * (Fixed const & a)
+{
+    _pf_num *= a._pf_num;
+    return (*this);
+}
+
+Fixed &  Fixed::operator / (Fixed const & a)
+{
+    _pf_num /= a._pf_num;
+    return (*this);
+}
+
+Fixed & Fixed::operator ++ ()
+{
+    ++_pf_num;
+    return(*this);
+}
+
+Fixed & Fixed::operator -- ()
+{
+    --_pf_num;
+    return(*this);
+}
+
+Fixed & Fixed::operator ++ (int)
+{
+    _pf_num++;
+    return(*this);
+}
+
+Fixed & Fixed::operator -- (int)
+{
+    _pf_num--;
+    return(*this);
+}
+
+Fixed & Fixed::min (Fixed & a, Fixed & b)
+{
+    if (a < b)
+        return (a);
+    return (b);
+}
+
+Fixed & Fixed::max (Fixed & a, Fixed & b)
+{
+    if (a > b)
+        return (a);
+    return (b);
+}
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
 }
+
+

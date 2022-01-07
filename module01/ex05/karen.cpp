@@ -6,7 +6,7 @@
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 15:33:34 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/02 16:19:32 by yait-kad         ###   ########.fr       */
+/*   Updated: 2022/01/06 20:45:10 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void    karen::complain(std::string level)
     while (i < 4)
     {
         if (str[i] == level)
-            ((*this).*ptr[i])();
+            ((this)->*ptr[i])();
         i++;
     }
 }
