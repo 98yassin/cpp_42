@@ -6,7 +6,7 @@
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:26:08 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/07 02:30:23 by yait-kad         ###   ########.fr       */
+/*   Updated: 2022/01/07 04:42:42 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ Fixed::Fixed(float const b)
 {
     std::cout << "float constructor called" << std::endl;
     _pf_num = roundf(b * (1 << _b_num));
-    // _pf_num = b * (1 << 1);
-    // _pf_num = b * (1 >> 1);
 }
 
 float Fixed::toFloat(void) const
