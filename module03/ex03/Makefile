@@ -1,10 +1,10 @@
-NAME = serena
+NAME = repetitive
 
 FLAGS = -Wall -Wextra -Werror
 
-SCRS = ScavTrap.cpp ClapTrap.cpp main.cpp
+SCRS = DiamondTrap.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
 
-INC = ClapTrap.hpp ScavTrap.hpp
+INC = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 OBJ = $(SCRS:.cpp=.o)
 
 all : $(NAME)
