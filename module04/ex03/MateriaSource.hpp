@@ -5,28 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 21:52:12 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/12 21:53:03 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/13 10:44:44 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/13 16:13:04 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
-#include "./IMateriaSource.hpp"
-#include "./AMateria.hpp"
+#ifndef MATERIASOURCE_H
+# define MATERIASOURCE_H
 
-class MateriaSource : public IMateriaSource 
+#include <iostream>
+#include "IMateriaSource.hpp"
+
+class MateriaSource : public IMateriaSource
 {
 private:
-	AMateria    *inventory[4];
-	int         _nbMateria;
+    AMateria* _inventory[4];
+    int _count_m;
 public:
-	MateriaSource();
-	virtual	~MateriaSource();
-	MateriaSource&	operator=(MateriaSource const& ms1);
-	virtual void learnMateria(AMateria*);
-	virtual AMateria* createMateria(std::string const & type);
-	void	DeleteInventory();
+    MateriaSource();
+    ~MateriaSource();
+    MateriaSource(const MateriaSource &ms1);
+    MateriaSource & operator=(const MateriaSource &ms1);
+    
+    void learnMateria(AMateria* m);
+    AMateria* createMateria(std::string const & type);
+    void delete_inv();
 };
 
 #endif

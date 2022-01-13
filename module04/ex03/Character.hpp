@@ -6,7 +6,7 @@
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 09:20:25 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/13 10:05:27 by yait-kad         ###   ########.fr       */
+/*   Updated: 2022/01/13 10:39:18 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
     void equip(AMateria* m);
     void unequip(int idx);
     void use(int idx, ICharacter& target);
+    void deleting_inv();
 };
 
 #endif

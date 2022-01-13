@@ -6,7 +6,7 @@
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 09:20:41 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/13 10:18:02 by yait-kad         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:11:59 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 Character::Character():_count_m(0)
 {
+    std::cout << "Default constructor called Character" << std::endl;
 }
 
 Character::~Character()
 {
+    std::cout << "Destructor called Character" << std::endl;
+    deleting_inv();
 }
 
 Character::Character(const Character &c1)
 {
-    std::cout << "copy constructor called" << std::endl;
+    std::cout << "copy constructor called Character" << std::endl;
     *this = c1;
 }
 
 Character & Character::operator=(const Character &c1)
 {
-    std::cout << "Assignement operator called" << std::endl;
+    std::cout << "Assignement operator called Character" << std::endl;
     _name = c1._name;
     _count_m = c1._count_m;
     for (int i = 0; i < 4; i++)
@@ -40,7 +43,7 @@ Character & Character::operator=(const Character &c1)
 
 Character::Character(std::string name):_name(name), _count_m(0)
 {
-    
+    std::cout << "initialize constructor called Character" << std::endl;
 }
 
 std::string const & Character::getName() const
@@ -62,7 +65,29 @@ void Character::equip(AMateria* m)
     }    
 }
 
+void Character::unequip(int idx)
+{
+    if (idx >= 0 && idx < 4)
+    {
+        _inventory[idx] = NULL;
+    }
+    _count_m--;
+    for (int i = idx; i < _count_m; i++)
+    {
+        _inventory[i] = _inventory[i + 1];
+    }
+    
+}
+
 void Character::use(int idx, ICharacter& target)
 {
     _inventory[idx]->use(target);
+}
+
+void Character::deleting_inv()
+{
+    for (int i = 0; i < _count_m; i++)
+    {
+        delete _inventory[i];
+    }
 }
