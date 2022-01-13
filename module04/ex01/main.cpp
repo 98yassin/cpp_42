@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 09:13:15 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/11 18:47:38 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/12 08:17:17 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/12 15:23:14 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
-
-class ScavTrap : virtual public ClapTrap
+int main()
 {
-public:
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &st1);
-	ScavTrap & operator=(const ScavTrap &st1);
-	void	attack(std::string target);
-	
-	void guardGate();
-	~ScavTrap();
-};
-
-#endif
+    Animal *m[10];
+    for (int i = 0; i < 10; i++)
+    {
+        if (i < 5)
+            m[i] = new Dog();
+        else
+            m[i] = new Cat();
+    }
+    for (int j = 0; j < 10; j++)
+    {
+        delete m[j];
+    }
+    
+    return 0;
+    
+}

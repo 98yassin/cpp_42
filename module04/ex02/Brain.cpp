@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 09:13:15 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/11 18:47:38 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/12 14:19:56 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/12 14:22:27 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#include "Brain.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
-
-class ScavTrap : virtual public ClapTrap
+Brain::Brain()
 {
-public:
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &st1);
-	ScavTrap & operator=(const ScavTrap &st1);
-	void	attack(std::string target);
-	
-	void guardGate();
-	~ScavTrap();
-};
+    std::cout << "Brain Default Constructor Called" << std::endl;
+}
 
-#endif
+Brain::~Brain()
+{
+    std::cout << "Brain Destructor Called" << std::endl;
+}

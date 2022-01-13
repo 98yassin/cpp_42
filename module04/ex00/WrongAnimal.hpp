@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 09:13:15 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/11 18:47:38 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/12 10:40:58 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/12 11:09:58 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef WRONGANIMAL_H
+# define WRONGANIMAL_H
 
 #include <iostream>
-#include "ClapTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap
+class WrongAnimal
 {
+protected:
+    std::string type;
 public:
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &st1);
-	ScavTrap & operator=(const ScavTrap &st1);
-	void	attack(std::string target);
-	
-	void guardGate();
-	~ScavTrap();
+    WrongAnimal();
+    WrongAnimal(const WrongAnimal &w1);
+    WrongAnimal & operator=(const WrongAnimal &w1);
+    ~WrongAnimal();
+    
+    std::string getType() const;
+    void makeSound() const;
 };
 
 #endif

@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 09:13:15 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/11 18:47:38 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/13 08:53:50 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/13 10:09:51 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef ICE_H
+# define ICE_H
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class ScavTrap : virtual public ClapTrap
+class Ice : public AMateria
 {
+private:
+    
 public:
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &st1);
-	ScavTrap & operator=(const ScavTrap &st1);
-	void	attack(std::string target);
-	
-	void guardGate();
-	~ScavTrap();
+    Ice();
+    ~Ice();
+    Ice(const Ice &c1);
+    Ice & operator=(const Ice &c1);
+
+    AMateria* clone() const;
+    void use(ICharacter& target);
 };
 
 #endif
