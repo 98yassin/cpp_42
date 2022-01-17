@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    Bureaucrat.hpp                                    :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 11:15:24 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/14 12:12:20 by yait-kad         ###   ########.fr       */
+/*   Updated: 2022/01/15 13:29:38 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,39 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
+class Form;
 class  Bureaucrat
 {
 private:
-    const std::string _name;
-    int _grade;
+	const std::string _name;
+	int _grade;
 public:
-    Bureaucrat();
-    Bureaucrat(const Bureaucrat &b);
-    Bureaucrat(std::string name, int grade);
-    Bureaucrat & operator=(const Bureaucrat &b);
-    ~Bureaucrat();
-    
-    class GradeTooHighException : public std::exception
-    {
-        const char* what() throw();
-    };
-    class GradeTooLowException : public std::exception
-    {
-        const char* what() throw();
-    };
-    
-    const std::string & getName() const;
-    const int & getGrade() const;
-    void increment();
-    void decrement();
-    
+	Bureaucrat();
+	Bureaucrat(const Bureaucrat &b);
+	Bureaucrat(const std::string name, int grade);
+	Bureaucrat & operator=(const Bureaucrat &b);
+	~Bureaucrat();
+	
+	class GradeTooHighException : public std::exception
+	{
+		const char* what() const throw();
+	};
+	class GradeTooLowException : public std::exception
+	{
+		const char* what() const throw();
+	};
+	
+	const std::string &	getName() const;
+	const int &			getGrade() const;
+	void				increment();
+	void				decrement();
+
+	void				signForm(Form &f1);
+	
 };
+
+std::ostream & operator<<(std::ostream & os, Bureaucrat const & b);
 
 #endif

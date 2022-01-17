@@ -1,10 +1,10 @@
-NAME = bureaucrat
+NAME = Form
 
 FLAGS = -Wall -Wextra -Werror
 
-SCRS = Bureaucrat.cpp main.cpp
+SCRS = Form.cpp Bureaucrat.cpp main.cpp
 
-INC =  Bureaucrat.hpp
+INC =  Bureaucrat.hpp Form.hpp
 OBJ = $(SCRS:.cpp=.o)
 
 all : $(NAME)

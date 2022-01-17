@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 21:54:31 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/14 15:32:28 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/17 14:33:14 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/17 14:42:17 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef Convert_H
+# define Convert_H
 
-int main()
+#include <iostream>
+#include <string>
+
+class Convert
 {
-    try
-    {
-        Bureaucrat b1("bureaucrat name", 150);
-        b1.decrement();
-        std::cout << b1 << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+private:
+    std::string str;
+public:
+    Convert();
+    Convert(const Convert &c1);
+    Convert & operator=(const Convert &c1);
+    ~Convert();
+
     
-    return 0;
-}
+};
+
+#endif
