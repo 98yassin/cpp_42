@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 14:33:14 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/17 14:42:17 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/19 14:56:24 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/19 15:18:41 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Convert_H
-# define Convert_H
+#include "whatever.hpp"
 
-#include <iostream>
-#include <string>
-
-class Convert
+int main()
 {
-private:
-    std::string str;
-public:
-    Convert();
-    Convert(const Convert &c1);
-    Convert & operator=(const Convert &c1);
-    ~Convert();
+    int a = 2;
+    int b = 3;
+    int *aa = &a;
+    int *bb = &b;
 
-    
-};
-
-#endif
+    swap(aa, bb);
+    std::cout << "a = " << *aa << ", b = " << *bb << std::endl;
+    std::cout << "min(a, b) = " << min(*aa, *bb) << std::endl;
+    std::cout << "max(a, b) = " << max(*aa, *bb) << std::endl;
+    return 0;
+}

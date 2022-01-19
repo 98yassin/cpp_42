@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 14:39:54 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/17 14:46:06 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/17 11:00:07 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/18 11:06:19 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-Convert::Convert()
+int main(int argc, char const *argv[])
 {
-    std::cout << "Default Constructor Called" << std::endl;
-}
-
-Convert::Convert(const Convert & c1)
-{
-    std::cout << "Copy Constructor Called" << std::endl;
-    *this = c1;
-}
-
-Convert::~Convert()
-{
-    std::cout << "Destructor Called" << std::endl;
+    if (argc == 2)
+    {
+        Convert num(argv[1]);
+    }
+    else 
+        std::cout << "missing argument or more arguments entred" << std::endl;
+    return 0;
 }
