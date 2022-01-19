@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 14:56:24 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/19 15:18:41 by yait-kad         ###   ########.fr       */
+/*   Created: 2022/01/19 19:56:13 by yait-kad          #+#    #+#             */
+/*   Updated: 2022/01/19 19:56:54 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#ifndef ITER_HPP
+#define ITER_HPP
+#include <iostream>
 
-int main()
+template <typename T>
+void    print(T const & t)
 {
-    int a = 2;
-    int b = 3;
-    int *aa = &a;
-    int *bb = &b;
-
-    swap(aa, bb);
-    std::cout << "a = " << *aa << ", b = " << *bb << std::endl;
-    std::cout << "min(a, b) = " << min(*aa, *bb) << std::endl;
-    std::cout << "max(a, b) = " << max(*aa, *bb) << std::endl;
-    return 0;
+    std::cout << t << std::endl;
 }
+
+template <typename T>
+void    iter(T *a, int size, void(*print)(T const &))
+{
+    for (int i = 0; i < size; i++)
+    {
+        (*print)(a[i]);
+    }    
+}
+
+#endif
