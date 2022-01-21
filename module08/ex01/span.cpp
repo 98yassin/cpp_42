@@ -6,7 +6,7 @@
 /*   By: yait-kad <yait-kad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 21:37:18 by yait-kad          #+#    #+#             */
-/*   Updated: 2022/01/20 21:39:10 by yait-kad         ###   ########.fr       */
+/*   Updated: 2022/01/21 11:20:02 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int span::longestSpan()
     else
     {
         std::sort(v.begin(), v.end());
+         std::cout<<"k"<<*(v.end() - 1)<<std::endl;
         return (*(v.end() - 1) - *v.begin());
     }
 }
@@ -81,6 +82,12 @@ int span::shortestSpan()
     else
     {
         std::sort(v.begin(), v.end());
+        std::cout<<"s"<<*v.begin()<<std::endl;
+        for (size_t i = 0; i < v.size(); i++)
+        {
+            std::cout<<"res"<<v[i]<<std::endl;
+        }
+         std::cout<<"s"<<*(v.begin() + 1)<<std::endl;
         return (*(v.begin() + 1) - *(v.begin()));
     }
 }
